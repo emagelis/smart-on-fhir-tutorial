@@ -35,6 +35,7 @@
           var dobStr = monthIndex + '/' + day + '/' + year;
           var fname = '';
           var lname = '';
+          var pid = patient.identifier;
 
           if (typeof patient.name[0] !== 'undefined') {
             fname = patient.name[0].given.join(' ');
@@ -48,6 +49,7 @@
           var ldl = byCodes('2089-1');
 
           var p = defaultPatient();
+          p.patientid = pid;
           p.birthdate = dobStr;
           p.gender = gender;
           p.fname = fname;
@@ -80,6 +82,7 @@
 
   function defaultPatient(){
     return {
+      patientid:{value: ''},
       fname: {value: ''},
       lname: {value: ''},
       gender: {value: ''},
@@ -145,6 +148,7 @@
   window.drawVisualization = function(p) {
     $('#holder').show();
     $('#loading').hide();
+    $('#patientid').html(p.patientid);
     $('#fname').html(p.fname);
     $('#lname').html(p.lname);
     $('#gender').html(p.gender);
