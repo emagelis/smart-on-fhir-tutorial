@@ -47,10 +47,13 @@
           var hdl = byCodes('2085-9');
           var ldl = byCodes('2089-1');
           
-          var pid =  'empty id';
-          if(typeof patient["identifier"] != 'undefined' &&
-            typeof patient["identifier"][0].value != 'undefined'){
-            pid = patient["identifier"][0].value;
+          if(typeof patient["identifier"] != 'undefined')
+          {
+              pid = '';
+              patient["identifier"].forEach(function(p)
+              {
+                pid = pid + p.value + ' ';
+              });	
           }
 
           var p = defaultPatient();
