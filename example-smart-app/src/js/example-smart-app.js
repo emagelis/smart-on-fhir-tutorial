@@ -35,7 +35,6 @@
           var dobStr = monthIndex + '/' + day + '/' + year;
           var fname = '';
           var lname = '';
-          var pid = patient.identifier.value;
 
           if (typeof patient.name[0] !== 'undefined') {
             fname = patient.name[0].given.join(' ');
@@ -47,6 +46,11 @@
           var diastolicbp = getBloodPressureValue(byCodes('55284-4'),'8462-4');
           var hdl = byCodes('2085-9');
           var ldl = byCodes('2089-1');
+          
+          var pid =  'undefined';
+          if(typof patient.identifier != 'undefined'){
+            pid = 'has value';
+          }
 
           var p = defaultPatient();
           p.patientid = pid;
