@@ -52,7 +52,9 @@
               pid = '';
               patient["identifier"].forEach(function(p)
               {
-                pid = pid + p.value + ' ';
+                var idValue = p.value;
+                var idType = p.type.text;
+                pid = pid + 'Id Type: ' + idType + 'Id Value: ' + idValue + '; ';
               });	
           }
 
