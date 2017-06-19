@@ -50,7 +50,7 @@
           var pid =  'empty id';
           if(typeof patient["identifier"] != 'undefined' &&
             typeof patient["identifier"][0].value != 'undefined'){
-            pid = 'has value';
+            pid = patient["identifier"][0].value;
           }
 
           var p = defaultPatient();
