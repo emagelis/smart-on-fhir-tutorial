@@ -48,7 +48,8 @@
           var ldl = byCodes('2089-1');
           
           var pid =  'empty id';
-          if(typeof patient["identifier"] != 'undefined'){
+          if(typeof patient["identifier"] != 'undefined' &&
+            typeof patient["identifier"].value != 'undefined'){
             pid = 'has value';
           }
 
